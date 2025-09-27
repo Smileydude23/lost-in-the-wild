@@ -14,3 +14,7 @@ func time_left_to_live():
 
 func _process(delta):
 	label.text = "%02d:%02d" % time_left_to_live()
+
+func out_of_time():
+	if $Timer.time_left == 0:
+		get_tree().quit()
