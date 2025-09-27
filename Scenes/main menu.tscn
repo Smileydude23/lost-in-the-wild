@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://gqj1bn3rqq22"]
+
+[ext_resource type="Script" uid="uid://4et4es6hplum" path="res://Scenes/main_menu.gd" id="1_hlgxo"]
+[ext_resource type="FontFile" uid="uid://np7t42yxesoo" path="res://Images/Minecraft.ttf" id="2_slhv3"]
+[ext_resource type="Texture2D" uid="uid://d1utcy64fv2dc" path="res://Images/Ghost_game_back_ground.png" id="2_t8go7"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hlgxo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -288.0
+offset_right = 1158.0
+offset_bottom = 865.0
+texture = ExtResource("2_t8go7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = 4.5
+offset_right = 81.0
+offset_bottom = 105.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="OptionsButtion" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Controls"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -110.5
+offset_right = 186.0
+offset_bottom = -59.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_slhv3")
+theme_override_font_sizes/font_size = 50
+text = "Lost In The Wild"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButtion" to="." method="_on_options_buttion_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
