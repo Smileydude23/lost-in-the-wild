@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://dinepgsl5hkd2"]
+[gd_scene load_steps=14 format=4 uid="uid://dinepgsl5hkd2"]
 
 [ext_resource type="Texture2D" uid="uid://xxk6bcydn5al" path="res://Images/forest_demo_objects.png" id="1_eyrmv"]
 [ext_resource type="PackedScene" uid="uid://bmwu7iuhpqk8x" path="res://Scenes/player.tscn" id="1_ojpnj"]
 [ext_resource type="Texture2D" uid="uid://cpm36bjuy1nra" path="res://Images/forest_demo_terrain.png" id="2_srjhq"]
 [ext_resource type="PackedScene" uid="uid://b1njy1f5mh4ro" path="res://health_timer.tscn" id="4_srjhq"]
+[ext_resource type="Script" uid="uid://nfdrpdy7wxfv" path="res://Scenes/human.gd" id="5_7unth"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7unth"]
 texture = ExtResource("1_eyrmv")
@@ -282,6 +283,8 @@ b = Vector2(-574, -545)
 a = Vector2(-593, 610)
 b = Vector2(-593, -544)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_k58d2"]
+
 [node name="Node" type="Node"]
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -315,3 +318,12 @@ position = Vector2(1746, 0)
 shape = SubResource("SegmentShape2D_srjhq")
 
 [node name="HealthTimer" parent="." instance=ExtResource("4_srjhq")]
+
+[node name="Human" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Human"]
+script = ExtResource("5_7unth")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Human/Area2D"]
+position = Vector2(-67, 87)
+shape = SubResource("CircleShape2D_k58d2")

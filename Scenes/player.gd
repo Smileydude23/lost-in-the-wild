@@ -11,6 +11,11 @@ func _physics_process(delta):
 		if direction.length() > 0:
 			last_direction = direction
 			play_walk_animation(direction)
+		else: 
+			play_idle_animation(direction)
+			
+		if velocity.is_zero_approx():
+			play_idle_animation(direction)
 			
 func play_walk_animation(direction):
 	if direction.x > 0:
