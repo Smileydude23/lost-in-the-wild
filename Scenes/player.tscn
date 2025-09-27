@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmwu7iuhpqk8x"]
+[gd_scene load_steps=7 format=3 uid="uid://bmwu7iuhpqk8x"]
 
 [ext_resource type="Script" uid="uid://cnsmabesne4rm" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cyf46kusrn4ux" path="res://Images/ghost.png" id="2_6t5aa"]
@@ -6,6 +6,10 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
 radius = 6.0827627
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
+atlas = ExtResource("3_6t5aa")
+region = Rect2(0, 0, 252, 250)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vgqql"]
 animations = [{
@@ -19,7 +23,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_6t5aa")
+"texture": SubResource("AtlasTexture_6t5aa")
 }],
 "loop": true,
 "name": &"walk_right",
@@ -38,4 +42,4 @@ shape = SubResource("CircleShape2D_vgqql")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.064000025, 0.064)
 sprite_frames = SubResource("SpriteFrames_vgqql")
-animation = &"walk_right"
+animation = &"walk_left"
