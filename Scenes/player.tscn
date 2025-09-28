@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://cnsmabesne4rm" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://vc0f421603w5" path="res://Images/Ghostgreen.png" id="2_cvnsp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
-radius = 6.0827627
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
 atlas = ExtResource("2_cvnsp")
@@ -144,11 +143,12 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_cvnsp")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_vgqql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 1)

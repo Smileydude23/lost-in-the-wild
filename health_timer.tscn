@@ -25,3 +25,5 @@ offset_bottom = 48.0
 text = "Sacrifice All 12 Humans In
 Time To Resurect Yourself"
 horizontal_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

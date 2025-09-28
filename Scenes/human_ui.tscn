@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0ypgqqtjlbbt"]
+
+[ext_resource type="Script" uid="uid://dur36e8egrbdr" path="res://Scenes/human_ui.gd" id="1_hnpv8"]
+[ext_resource type="Texture2D" uid="uid://uvol5wsqk6c1" path="res://Images/Grandpops_Puerfuwl.png" id="2_jpg2g"]
+
+[node name="human UI" type="Control"]
+layout_mode = 3
+anchor_left = -0.026
+anchor_bottom = 0.042000003
+offset_left = 29.952
+offset_right = 40.0
+offset_bottom = 12.7839985
+script = ExtResource("1_hnpv8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 23.0
+offset_right = 152.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -19.0
+offset_right = 117.0
+offset_bottom = 109.0
+texture = ExtResource("2_jpg2g")
